@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+    @pages = $pages
   end
 
   def prices

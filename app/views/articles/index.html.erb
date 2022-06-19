@@ -3,41 +3,21 @@
 
   <div class="container px-4 py-2" id="custom-cards">
 
+    <% @pages.each_slice(3) do |slice| %>
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-2 mb-4">
-      <div class="col">
-        <a href="/01_08_2021">
-          <div class="h-100 overflow-hidden rounded-4 shadow-lg">
-            <%= image_tag "01_08_2021/1.jpg", class: "w-100" %>
-          </div>
-        </a>
-      </div>
 
+      <% slice.each do |page| %>
       <div class="col">
-        <a href="/02_08_2021">
+        <a href="<%= page[:name] %>">
           <div class="h-100 overflow-hidden rounded-4 shadow-lg">
-            <%= image_tag "02_08_2021/4.jpg", class: "w-100" %>
+            <%= image_tag page[:photo], class: "w-100" %>
           </div>
         </a>
       </div>
+      <% end %>
 
-      <div class="col">
-        <a href="/05_08_2021">
-          <div class="h-100 overflow-hidden rounded-4 shadow-lg">
-            <%= image_tag "05_08_2021/1.jpg", class: "w-100" %>
-          </div>
-        </a>
-      </div>
     </div>
-
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-2 mb-4">
-      <div class="col">
-        <a href="/10_10_2021">
-          <div class="h-100 overflow-hidden rounded-4 shadow-lg">
-            <%= image_tag "10_10_2021/1.jpg", class: "w-100" %>
-          </div>
-        </a>
-      </div>
-    </div>
+    <% end %>
 
   </div>
 

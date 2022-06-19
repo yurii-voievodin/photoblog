@@ -1,5 +1,12 @@
+$pages = [
+  { name: "01_08_2021", photo: "01_08_2021/1.jpg" },
+  { name: "01_08_2021", photo: "02_08_2021/4.jpg" },
+  { name: "05_08_2021", photo: "05_08_2021/1.jpg" },
+  { name: "10_10_2021", photo: "10_10_2021/1.jpg" },
+  { name: "28_11_2021", photo: "28_11_2021/1.jpg" }
+]
+
 Rails.application.routes.draw do
-  get 'pages/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -11,8 +18,7 @@ Rails.application.routes.draw do
 
   get "/contacts", to: "articles#contacts"
 
-  get "/01_08_2021", to: "pages#page_01_08_2021"
-  get "/02_08_2021", to: "pages#page_02_08_2021"
-  get "/05_08_2021", to: "pages#page_05_08_2021"
-  get "/10_10_2021", to: "pages#page_10_10_2021"
+  $pages.each { |page|
+    get "/#{page[:name]}", to: "pages#page_#{page[:name]}"
+  }
 end
