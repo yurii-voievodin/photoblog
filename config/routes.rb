@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get "/reviews", to: "articles#reviews"
 
   get "/contacts", to: "articles#contacts"
+
+  get "/01_08_2022", to: "pages#page_01_08_2022"
 end
