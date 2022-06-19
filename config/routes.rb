@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   get "/contacts", to: "articles#contacts"
 
-  get "/01_08_2022", to: "pages#page_01_08_2022"
-  get "/02_08_2022", to: "pages#page_02_08_2022"
-  get "/05_08_2022", to: "pages#page_05_08_2022"
+  get "/01_08_2021", to: "pages#page_01_08_2021"
+  get "/02_08_2021", to: "pages#page_02_08_2021"
+  get "/05_08_2021", to: "pages#page_05_08_2021"
+  get "/10_10_2021", to: "pages#page_10_10_2021"
 end
