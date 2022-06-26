@@ -23,6 +23,18 @@ class PagesController < ApplicationController
     load_and_render("28_11_2021")
   end
 
+  def page_22_04_2021
+    load_and_render("22_04_2021")
+  end
+
+  def page_15_05_2021
+    load_and_render("15_05_2021")
+  end
+
+  def page_10_03_2021
+    load_and_render("10_03_2021")
+  end
+
   private 
 
   def load_json_with_name(json_name)
