@@ -1,0 +1,27 @@
+<main>
+  <%= render "layouts/header" %>
+
+  <div class="container px-4 py-2" id="custom-cards">
+
+    <h2><%= @title %></h2>
+
+    <% @albums.each_slice(3) do |slice| %>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-2 mb-4">
+
+      <% slice.each do |page| %>
+      <div class="col">
+        <%= link_to collections_url(page[:name]) do %>
+        <div class="h-100 overflow-hidden rounded-4 shadow-lg">
+          <%= image_tag page[:first_photo], class: "w-100" %>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+
+    </div>
+    <% end %>
+
+  </div>
+
+  <%= render "layouts/footer" %>
+</main>
