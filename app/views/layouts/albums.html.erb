@@ -12,7 +12,7 @@
       <div class="col">
         <%= link_to collections_url(page[:name]) do %>
         <div class="h-100 overflow-hidden rounded-4 shadow-lg">
-          <%= image_tag page[:first_photo], class: "w-100" %>
+          <%= image_tag "#{page[:name]}/#{page[:first_photo]}", class: "w-100" %>
         </div>
         <% end %>
       </div>

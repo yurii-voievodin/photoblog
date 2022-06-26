@@ -2,6 +2,7 @@ class CollectionsController < ApplicationController
   def show
     id = params[:id]
     load_json_with_name(id)
+    @collection_name = id
   end
 
   private 
