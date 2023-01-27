@@ -9,7 +9,6 @@ class CategoriesController < ApplicationController
       { name: "13_07_2021", first_photo: "1.jpg" },
       { name: "18_06_2021", first_photo: "1.jpg" },
       { name: "21_10_2021", first_photo: "2.jpg" },
-      { name: "22_07_2021", first_photo: "1.jpg" },
       { name: "30_01_2021", first_photo: "2.jpg" }
     ]
     @title = "Сімейні фотосесії"
@@ -44,7 +43,6 @@ class CategoriesController < ApplicationController
   def love_story
     @albums = [
       { name: "22_04_2021", first_photo: "1.jpg" },
-      { name: "15_05_2021", first_photo: "6.jpg" },
       { name: "09_08_2021", first_photo: "3.jpg" }
     ]
     @title = "Історії кохання"
