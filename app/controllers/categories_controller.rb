@@ -3,16 +3,10 @@ class CategoriesController < ApplicationController
   end
 
   def family
-    @albums = [
-      { name: "01_08_2021", first_photo: "1.jpg" },
-      { name: "02_08_2021", first_photo: "4.jpg" },
-      { name: "13_07_2021", first_photo: "1.jpg" },
-      { name: "18_06_2021", first_photo: "1.jpg" },
-      { name: "21_10_2021", first_photo: "2.jpg" },
-      { name: "30_01_2021", first_photo: "2.jpg" }
-    ]
+    load_json_with_name('family')
+    @collection_name = 'family'
     @title = "Сімейні фотосесії"
-    render "layouts/albums"
+    render "collections/show"
   end
 
   def individual
@@ -47,6 +41,12 @@ class CategoriesController < ApplicationController
     ]
     @title = "Історії кохання"
     render "layouts/albums"
+  end
+
+
+  def load_json_with_name(json_name)
+    photos_json = File.read("data/#{json_name}.json")
+    @photos = JSON.parse(photos_json)['photos']
   end
 
 end
