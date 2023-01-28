@@ -24,12 +24,10 @@ class CategoriesController < ApplicationController
   end
 
   def love_story
-    @albums = [
-      { name: "22_04_2021", first_photo: "1.jpg" },
-      { name: "09_08_2021", first_photo: "3.jpg" }
-    ]
+    load_json_with_name('love_story')
+    @collection_name = 'love_story'
     @title = "Історії кохання"
-    render "layouts/albums"
+    render "collections/show"
   end
 
 
