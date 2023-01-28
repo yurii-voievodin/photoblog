@@ -17,13 +17,10 @@ class CategoriesController < ApplicationController
   end
 
   def wedding
-    @albums = [
-      { name: "05_08_2021", first_photo: "1.jpg" },
-      { name: "10_10_2021", first_photo: "4.jpg" },
-      { name: "28_11_2021", first_photo: "1.jpg" }
-    ]
+    load_json_with_name('wedding')
+    @collection_name = 'wedding'
     @title = "Весільні"
-    render "layouts/albums"
+    render "collections/show"
   end
 
   def love_story
